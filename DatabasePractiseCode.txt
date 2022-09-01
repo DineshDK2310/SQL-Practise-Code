@@ -1,0 +1,107 @@
+create schema cardealers;
+
+CREATE TABLE `cardealers`.`car_dealer` (
+  `id` INT AUTO_INCREMENT,
+  `dealername` VARCHAR(255) NOT NULL,
+  `dealercode` VARCHAR(255) NULL,
+  `state` varchar(100),
+  `city` varchar(100),
+  `address` VARCHAR(1000) NULL,
+  `contactnumber` int null,
+  `active` TINYINT(1) NULL,
+  `created` DATETIME NULL,
+  `modified` DATETIME NULL,
+  PRIMARY KEY (`id`));
+  
+select *from car_dealer;
+
+insert into car_dealer values(00,'DK Automobiles','DK10','TamilNadu','Thiruvallur','1002,voc st,Thiruvallur',90374394,1,'1999-10-11','2004-05-02');
+insert into car_dealer values(00,'MM Automobiles','MM10','TamilNadu','Chennai','10,voc st,Chennai-602028',87128715,1,'1999-10-11','2004-05-02');
+insert into car_dealer values(00,'MK Automobiles','MK10','Karnataka','Bangalore','12,voc st,Bangalore-602028',192635,1,'2022-10-11','2010-05-02');
+
+  
+  
+create table car_maker(  
+ `id` INT AUTO_INCREMENT,
+  `carmaker_name` VARCHAR(255) NOT NULL,
+  `carmaker_code` VARCHAR(255) NULL,
+  `statename` varchar(100),
+  `cityname` varchar(100),
+  `address` VARCHAR(1000) NULL,
+  `active` TINYINT(1) NULL,
+  `created` DATETIME NULL,
+  `modified` DATETIME NULL,
+  PRIMARY KEY (`id`));
+  
+  select *from car_maker;
+  
+  
+  insert into car_maker values(00,'BWM','BMW20','Karnataka','Bangalore','10,Thousands Lights,Bangalore-602028',1,'2022-10-11','2010-05-02');
+  insert into car_maker values(00,'AUDI','AU20','TamilNadu','Chennai','10,Thousands Lights,chennai-602028',1,'1980-10-11','2015-05-02');
+  insert into car_maker values(00,'FERRAI','FE20','TamilNadu','Thiruvallur','10,Thousands Lights,Thiruvallur-602028',1,'1992-10-11','2020-05-02');
+   
+
+create table car_model(  
+ `id` INT AUTO_INCREMENT,
+  `carmodel_name` VARCHAR(255) NOT NULL,
+  `carmodel_code` VARCHAR(255) NULL,
+  `mileage` varchar(100),
+  `carmodel_price` varchar(50),
+  `seat` varchar(100),
+  `fuel_type` varchar(50),
+  `tranmission` varchar(100),
+  `active` TINYINT(1) NULL,
+  `created` DATETIME NULL,
+  `modified` DATETIME NULL,
+  PRIMARY KEY (`id`));
+  
+  
+insert into car_model values(00,'BWM18','BMW18','15km/Ltr','RS.24Lakhs','8 seats','petrol','manual',1,'2022-10-11','2010-05-02');
+insert into car_model values(00,'BWM20','BMW20','12km/Ltr','RS.30Lakhs','4 seats','Diesal','auto',1,'2010-10-11','2020-05-02');
+insert into car_model values(00,'AUDI18','AUDI18','10km/Ltr','RS.20Lakhs','10 seats','petrol','manual',1,'2022-10-11','2010-05-02');
+insert into car_model values(00,'AUDI20','AUDI20','18km/Ltr','RS.15Lakhs','8 seats','Diesal','auto',1,'2022-10-11','2010-05-02');
+insert into car_model values(00,'FERRAI18','FERRAI18','8km/Ltr','RS.54Lakhs','2 seats','petrol','manual',1,'2022-10-11','2010-05-02');
+insert into car_model values(00,'FERRAI20','FERRAI20','8km/Ltr','RS.80Lakhs','2 seats','Diesal','auto',1,'2022-10-11','2010-05-02');
+
+select *from car_model;
+  
+create table tax (
+`id` int auto_increment,
+`state` varchar(100),
+`city` varchar(100),
+primary key (`id`));
+  
+select *from tax;
+
+alter table tax add tax_amount varchar(100);
+
+insert into tax values(0,'TamilNadu','Thiruvallur','Rs.200');
+insert into tax values(0,'TamilNadu','Chennai','Rs.210');
+insert into tax values(0,'Karnataka','Bangalore','Rs.300');
+
+
+create table insurance_company(
+`id` int auto_increment,
+`company_name` varchar(100),
+`state` varchar(100),
+`city` varchar(100),
+`insurance_validity` varchar(20),
+`insurance_amount` varchar(50),
+`active` tinyint(1) null,
+`created` datetime null,
+`modified` datetime null,
+primary key (`id`));
+
+select *from insurance_company;
+
+drop table insurance_company;
+
+insert into insurance_company values(00,'Acko','TamilNadu','Thiruvallur','5 years','Rs.5000',1,'2015-02-28','2017-04-22');
+insert into insurance_company values(00,'LIC','TamilNadu','Chennai','5 years','Rs.4500',1,'2015-02-28','2017-04-22');
+insert into insurance_company values(00,'Paiza','Karnataka','Bangalore','5 years','Rs.4000',1,'2015-02-28','2017-04-22');
+
+delete from insurance_company where id=4;
+  
+  
+ 
+
